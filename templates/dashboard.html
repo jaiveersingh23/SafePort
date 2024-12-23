@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafePort - Firewall Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        h1 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>SafePort - Dynamic Firewall Dashboard</h1>
+    <h2>Device Communication Logs</h2>
+    <table>
+        <tr>
+            <th>Device ID</th>
+            <th>IP Address</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for device_id, ips in logs.items() %}
+            {% for ip in ips %}
+                <tr>
+                    <td>{{ device_id }}</td>
+                    <td>{{ ip }}</td>
+                    <td>{{ current_time }}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+    <h2>Malicious IPs Blocked</h2>
+    <ul>
+        {% for ip in malicious_ips %}
+            <li>{{ ip }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
