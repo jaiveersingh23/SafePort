@@ -20,7 +20,7 @@ SafePort is a dynamic firewall system designed to secure IoT devices. It combine
 
 ## Installation
 
-1. Clone the repository:
+1. After forking, Clone the repository:
    ```bash
    git clone https://github.com/yourusername/SafePort.git
    cd SafePort
